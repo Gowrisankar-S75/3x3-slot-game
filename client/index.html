@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>🎰 Casino Slot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="game">
+
+<h1>🎰 CASINO SLOT</h1>
+
+<div class="info">
+
+<div id="balance">Balance: 1000</div>
+
+<div>
+
+Bet:
+<button onclick="setBet(5)">5</button>
+<button onclick="setBet(10)">10</button>
+<button onclick="setBet(20)">20</button>
+
+<span id="currentBet">10</span>
+
+</div>
+
+</div>
+
+<div id="slot">
+
+<div class="reel" id="reel0"></div>
+<div class="reel" id="reel1"></div>
+<div class="reel" id="reel2"></div>
+
+</div>
+
+<button class="spinBtn" onclick="spin()">SPIN</button>
+
+<div id="result"></div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
