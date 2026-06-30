@@ -1,49 +1,73 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>🎰 Casino Slot</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Jackpot Slots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="ambient-background"></div>
+    <div class="game-container">
+        <header>
+            <h1 class="logo">NEON <span>SLOTS</span></h1>
+            <div class="balance-container">
+                <span class="label">BALANCE</span>
+                <span id="balance" class="value">...</span>
+            </div>
+        </header>
 
-<div class="game">
+        <main id="slot-machine">
+            <div class="slot-overlay"></div>
+            <!-- SVG overlay for drawing winning lines -->
+            <svg id="win-lines-svg" class="win-lines-overlay" xmlns="http://www.w3.org/2000/svg"></svg>
+            <div class="reels-container">
+                <div class="reel" id="reel0"></div>
+                <div class="reel" id="reel1"></div>
+                <div class="reel" id="reel2"></div>
+            </div>
+        </main>
 
-<h1>🎰 CASINO SLOT</h1>
+        <div class="win-display">
+            <span id="result">Connecting...</span>
+        </div>
 
-<div class="info">
+        <div class="controls">
+            <div class="options-bar">
+                <div class="bet-controls">
+                    <span class="label">BET AMOUNT</span>
+                    <div class="bet-buttons">
+                        <button class="bet-btn" onclick="setBet(5, this)">$5</button>
+                        <button class="bet-btn active" onclick="setBet(10, this)">$10</button>
+                        <button class="bet-btn" onclick="setBet(20, this)">$20</button>
+                        <button class="bet-btn" onclick="setBet(50, this)">$50</button>
+                    </div>
+                </div>
+                
+                <div class="toggles">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="turboToggle" onchange="playClickSound()">
+                        <span class="slider"></span>
+                        <span class="toggle-label">TURBO</span>
+                    </label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="autoSpinToggle" onchange="toggleAutoSpin()">
+                        <span class="slider"></span>
+                        <span class="toggle-label">AUTO SPIN</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button class="spinBtn" id="spinBtn" onclick="spin()">
+                <span>SPIN</span>
+                <div class="glow"></div>
+            </button>
+        </div>
+    </div>
 
-<div id="balance">Balance: 1000</div>
-
-<div>
-
-Bet:
-<button onclick="setBet(5)">5</button>
-<button onclick="setBet(10)">10</button>
-<button onclick="setBet(20)">20</button>
-
-<span id="currentBet">10</span>
-
-</div>
-
-</div>
-
-<div id="slot">
-
-<div class="reel" id="reel0"></div>
-<div class="reel" id="reel1"></div>
-<div class="reel" id="reel2"></div>
-
-</div>
-
-<button class="spinBtn" onclick="spin()">SPIN</button>
-
-<div id="result"></div>
-
-</div>
-
-<script src="app.js"></script>
-
+    <script src="app.js"></script>
 </body>
 </html>
